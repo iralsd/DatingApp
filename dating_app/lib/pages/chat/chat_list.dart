@@ -96,6 +96,58 @@ class ChatScreen extends StatelessWidget {
       unreadCount: 0,
       isTyping: false,
     ),
+    PeopleModel(
+      id: '4',
+      name: 'Дмитрий',
+      age: '35',
+      photoUrl:
+          'https://i.pinimg.com/736x/d5/9f/50/d59f502c9fa01ff7321c0b67a27d8f9f.jpg',
+      isOnline: false,
+      isVip: false,
+      lastMessage: 'Привет! Как дела?',
+      timestamp: DateTime.now().subtract(const Duration(days: 3)),
+      unreadCount: 0,
+      isTyping: false,
+    ),
+    PeopleModel(
+      id: '4',
+      name: 'Дмитрий',
+      age: '35',
+      photoUrl:
+          'https://i.pinimg.com/736x/d5/9f/50/d59f502c9fa01ff7321c0b67a27d8f9f.jpg',
+      isOnline: false,
+      isVip: false,
+      lastMessage: 'Привет! Как дела?',
+      timestamp: DateTime.now().subtract(const Duration(days: 3)),
+      unreadCount: 0,
+      isTyping: false,
+    ),
+    PeopleModel(
+      id: '4',
+      name: 'Дмитрий',
+      age: '35',
+      photoUrl:
+          'https://i.pinimg.com/736x/d5/9f/50/d59f502c9fa01ff7321c0b67a27d8f9f.jpg',
+      isOnline: false,
+      isVip: false,
+      lastMessage: 'Привет! Как дела?',
+      timestamp: DateTime.now().subtract(const Duration(days: 3)),
+      unreadCount: 0,
+      isTyping: false,
+    ),
+    PeopleModel(
+      id: '4',
+      name: 'Дмитрий',
+      age: '35',
+      photoUrl:
+          'https://i.pinimg.com/736x/d5/9f/50/d59f502c9fa01ff7321c0b67a27d8f9f.jpg',
+      isOnline: false,
+      isVip: false,
+      lastMessage: 'Привет! Как дела?',
+      timestamp: DateTime.now().subtract(const Duration(days: 3)),
+      unreadCount: 0,
+      isTyping: false,
+    ),
   ];
 
   @override

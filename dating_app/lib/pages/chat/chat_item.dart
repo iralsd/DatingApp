@@ -17,8 +17,8 @@ class PeopleItem extends StatelessWidget {
           Stack(
             children: [
               Container(
-                width: 56,
-                height: 56,
+                width: 48,
+                height: 48,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: NetworkImage(person.photoUrl),
