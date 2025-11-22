@@ -1,5 +1,6 @@
 import 'package:dating_app/design/colors.dart';
 import 'package:dating_app/design/images.dart';
+import 'package:dating_app/pages/chat/chat_list.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
@@ -35,9 +36,7 @@ class ChatPage extends StatelessWidget {
               fontFamily: 'Nunito',
             )),
       ),
-      body: Container(
-        color: surfaceColor, //child: const VehicleList()
-      ),
+      body: Container(color: surfaceColor, child: ChatScreen()),
     );
   }
 }
