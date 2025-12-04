@@ -172,41 +172,143 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor,
-      appBar: AppBar(
         backgroundColor: primaryColor,
-        centerTitle: true,
-        leading: Container(
-          alignment: Alignment.center,
-          child: penImage,
-        ),
-        actions: [
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 23, vertical: 15),
-              child: glassImage)
-        ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(1.0),
-          child: Container(
-            color: secondaryColor,
-            height: 2.0,
+        appBar: AppBar(
+          backgroundColor: primaryColor,
+          centerTitle: true,
+          leading: Container(
+            alignment: Alignment.center,
+            child: penImage,
           ),
+          actions: [
+            Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 23, vertical: 15),
+                child: glassImage)
+          ],
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(1.0),
+            child: Container(
+              color: secondaryColor,
+              height: 2.0,
+            ),
+          ),
+          title: const Text('Сообщения',
+              style: TextStyle(
+                color: textColor,
+                fontSize: 18,
+                fontWeight: FontWeight.w800,
+                fontFamily: 'Nunito',
+              )),
         ),
-        title: const Text('Сообщения',
-            style: TextStyle(
-              color: textColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w800,
-              fontFamily: 'Nunito',
-            )),
-      ),
-      body: ListView.builder(
-        padding: EdgeInsets.zero,
-        itemCount: people.length,
-        itemBuilder: (context, index) {
-          return PeopleItem(person: people[index]);
-        },
-      ),
-    );
+        body: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              padding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+              height: 40,
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(243, 242, 249, 1),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12),
+                  bottomLeft: Radius.circular(2),
+                  bottomRight: Radius.circular(12),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 32,
+                      decoration: BoxDecoration(
+                        color: secondaryVariantColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12),
+                          bottomLeft: Radius.circular(2),
+                          bottomRight: Radius.circular(12),
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Все',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Nunito'),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 32,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(243, 242, 249, 1),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12),
+                          bottomLeft: Radius.circular(2),
+                          bottomRight: Radius.circular(12),
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Онлайн',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              // color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Nunito'),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 32,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(243, 242, 249, 1),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12),
+                          bottomLeft: Radius.circular(2),
+                          bottomRight: Radius.circular(12),
+                        ),
+                      ),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Сохраненные',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              // color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Nunito'),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                padding: EdgeInsets.zero,
+                itemCount: people.length,
+                itemBuilder: (context, index) {
+                  return PeopleItem(person: people[index]);
+                },
+              ),
+            )
+          ],
+        ));
   }
 }
