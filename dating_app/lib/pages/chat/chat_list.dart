@@ -172,6 +172,7 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBody: true,
         backgroundColor: primaryColor,
         appBar: AppBar(
           backgroundColor: primaryColor,
@@ -308,6 +309,23 @@ class ChatScreen extends StatelessWidget {
                 },
               ),
             )
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white.withOpacity(0.9),
+          currentIndex: 0,
+          items: [
+            BottomNavigationBarItem(
+              icon: Image.asset('Vector1.png') 
+            ),
+            BottomNavigationBarItem(
+              
+              icon: Image.asset('Vector1.png') 
+            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.person),
+            //   label: 'Профиль',
+            // ),
           ],
         ));
   }
