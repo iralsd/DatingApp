@@ -87,7 +87,7 @@ class PeopleItem extends StatelessWidget {
                         maxLines: 1,
                         style: const TextStyle(
                           fontFamily: 'Nunito',
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
@@ -103,7 +103,7 @@ class PeopleItem extends StatelessWidget {
                       person.age,
                       style: const TextStyle(
                         fontFamily: 'Nunito',
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.w800,
                       ),
                     ),

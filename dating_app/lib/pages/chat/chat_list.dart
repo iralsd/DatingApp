@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:dating_app/design/colors.dart';
 import 'package:dating_app/design/images.dart';
 
+// ignore: use_key_in_widget_constructors
 class ChatScreen extends StatelessWidget {
   // Список людей
   final List<PeopleModel> people = [
@@ -38,7 +39,8 @@ class ChatScreen extends StatelessWidget {
       name: 'Егор Крид',
       age: '25',
       photoUrl:
-          'https://i.pinimg.com/736x/fb/47/57/fb4757a069b5d4649f3402da60f7b4a4.jpg',
+          '',
+      localImagePath: 'assets/images/man1.png',
       isOnline: true,
       isVip: true,
       lastMessage: 'Она отказала мне, сказала, что любит тебя!',
@@ -106,6 +108,7 @@ class ChatScreen extends StatelessWidget {
       age: '25',
       photoUrl:
           'https://i.pinimg.com/736x/b1/e1/97/b1e197615b913f5d61323652ae1a59fd.jpg',
+      localImagePath: 'assets/images/us.png',
       isOnline: false,
       isVip: true,
       lastMessage: 'Привет! Как дела?',
@@ -132,7 +135,8 @@ class ChatScreen extends StatelessWidget {
       name: 'Дмитрий Нагиев',
       age: '25',
       photoUrl:
-          'https://i.pinimg.com/736x/81/ab/f2/81abf2419a99a5762a6f41a7ae7594e9.jpg',
+          '',
+      localImagePath: 'assets/images/man2.png',
       isOnline: false,
       isVip: true,
       lastMessage:
@@ -146,7 +150,8 @@ class ChatScreen extends StatelessWidget {
       name: 'Андрей',
       age: '25',
       photoUrl:
-          'https://i.pinimg.com/1200x/26/82/ec/2682ec51cdd0f28a03c56d8d0a55119d.jpg',
+          '',
+      localImagePath: 'assets/images/man3.png',
       isOnline: false,
       isVip: true,
       lastMessage: 'Люблю романтику',
@@ -159,7 +164,8 @@ class ChatScreen extends StatelessWidget {
       name: 'Умный человек в очках',
       age: '25',
       photoUrl:
-          'https://i.pinimg.com/1200x/ec/2f/15/ec2f153e7f2f8c78920619d7f8406e35.jpg',
+          '',
+      localImagePath: 'assets/images/man4.png',
       isOnline: false,
       isVip: true,
       lastMessage: 'Люблю романтику',
@@ -205,11 +211,11 @@ class ChatScreen extends StatelessWidget {
         body: Column(
           children: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              padding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
               height: 40,
-              decoration: BoxDecoration(
-                color: const Color.fromRGBO(243, 242, 249, 1),
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(243, 242, 249, 1),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12),
                   topRight: Radius.circular(12),
@@ -222,7 +228,7 @@ class ChatScreen extends StatelessWidget {
                   Expanded(
                     child: Container(
                       height: 32,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: secondaryVariantColor,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(12),
@@ -231,7 +237,7 @@ class ChatScreen extends StatelessWidget {
                           bottomRight: Radius.circular(12),
                         ),
                       ),
-                      child: Align(
+                      child: const Align(
                         alignment: Alignment.center,
                         child: Text(
                           'Все',
@@ -248,8 +254,8 @@ class ChatScreen extends StatelessWidget {
                   Expanded(
                     child: Container(
                       height: 32,
-                      decoration: BoxDecoration(
-                        color: const Color.fromRGBO(243, 242, 249, 1),
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(243, 242, 249, 1),
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(12),
                           topRight: Radius.circular(12),
@@ -257,7 +263,7 @@ class ChatScreen extends StatelessWidget {
                           bottomRight: Radius.circular(12),
                         ),
                       ),
-                      child: Align(
+                      child: const Align(
                         alignment: Alignment.center,
                         child: Text(
                           'Онлайн',
@@ -274,8 +280,8 @@ class ChatScreen extends StatelessWidget {
                   Expanded(
                     child: Container(
                       height: 32,
-                      decoration: BoxDecoration(
-                        color: const Color.fromRGBO(243, 242, 249, 1),
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(243, 242, 249, 1),
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(12),
                           topRight: Radius.circular(12),
@@ -283,7 +289,7 @@ class ChatScreen extends StatelessWidget {
                           bottomRight: Radius.circular(12),
                         ),
                       ),
-                      child: Align(
+                      child: const Align(
                         alignment: Alignment.center,
                         child: Text(
                           'Сохраненные',
@@ -302,7 +308,7 @@ class ChatScreen extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
-                padding: EdgeInsets.zero,
+                padding: const EdgeInsets.only(bottom: 83),
                 itemCount: people.length,
                 itemBuilder: (context, index) {
                   return PeopleItem(person: people[index]);
@@ -311,22 +317,45 @@ class ChatScreen extends StatelessWidget {
             )
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white.withOpacity(0.9),
-          currentIndex: 0,
-          items: [
-            BottomNavigationBarItem(
-              icon: Image.asset('Vector1.png') 
-            ),
-            BottomNavigationBarItem(
+        bottomNavigationBar: BottomAppBar(
+          height: 83,
+          color: Colors.white.withOpacity(0.9),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  IconButton(
+                    iconSize: 24,
+                    icon: peopleImage,
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    iconSize: 24,
+                    icon: glass1Image,
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    iconSize: 24,
+                    icon: chatImage,
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    iconSize: 24,
+                    icon: chat2Image,
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    iconSize: 24,
+                    icon: menuImage,
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+              const SizedBox(height: 19), 
               
-              icon: Image.asset('Vector1.png') 
-            ),
-            // BottomNavigationBarItem(
-            //   icon: Icon(Icons.person),
-            //   label: 'Профиль',
-            // ),
-          ],
+            ],
+          ),
         ));
   }
 }
